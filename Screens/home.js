@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Badge, Right, Body, Icon, Text } from 'native-base';
 import { Dimensions } from "react-native";
-
+import ChatHome from "./ChatComponent/chatHome"
 
 export default class Home extends Component {
 
@@ -31,7 +31,7 @@ export default class Home extends Component {
                     <Body>
                         <Title>
                             {/* <Icon name='menu' /> */}
-                            The cow mandi app</Title>
+                           Chatting app</Title>
                     </Body>
                     <Right />
                 </Header>
@@ -40,9 +40,7 @@ export default class Home extends Component {
                 {/* MAIN CONTENT WORK */}
 
                 <Content>
-                    <Text>
-                        This is Content Section
-                    </Text>
+                    <ChatHome />
                 </Content>
 
                 {/* FOOTER WORK */}

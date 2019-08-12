@@ -8,7 +8,7 @@ import { Icon } from "native-base";
 import Signup from "./Screens/signup";
 import Home from "./Screens/home";
 import Login from './Screens/login';
-
+import ChatHome from "./Screens/ChatComponent/chatHome"
 const AppNavigator = createStackNavigator(
   {
 
@@ -47,6 +47,18 @@ const AppNavigator = createStackNavigator(
         )
       }
     },
+    ChatHome: {
+      screen: ChatHome,
+      navigationOptions: {
+        // tabBarLabel: "Membership",
+        // title: 'Sign In',
+        // // color:"#1A5CAD",
+        // //tabBarActiveTintColor
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="home" size={20} style={{ color: "black" }} />
+        )
+      }
+    },
 
   },
   {
@@ -58,7 +70,7 @@ const AppNavigator = createStackNavigator(
     //   },
     // },
 
-    initialRouteName: "Login"
+    initialRouteName: "ChatHome"
   }
 );
 
