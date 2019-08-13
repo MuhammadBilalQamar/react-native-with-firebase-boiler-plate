@@ -19,13 +19,13 @@ export default class Login extends Component {
     }
     Login() {
 
-        this.props.navigation.navigate("Home", { hi: "hello world" })
+        this.props.navigation.navigate("Home")
     }
 
     navigateToSignup() {
         // console.log("signup clicked")
         // this.props.navigation.navigate("Signup", { uid: e.user.uid })
-        this.props.navigation.navigate("Signup", { hi: "hello world" })
+        this.props.navigation.navigate("Signup")
 
     }
     render() {

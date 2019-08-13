@@ -13,8 +13,8 @@ export default class ChatHome extends Component {
     }
 
     componentDidMount() {
-        // console.log( this.props.navigation.state.params.hi)
-
+        
+        // console.log(this.props.navProps)
     }
     render() {
         return (
@@ -23,7 +23,7 @@ export default class ChatHome extends Component {
                 <Header hasTabs />
                 <Tabs renderTabBar={() => <ScrollableTab />}>
                     <Tab heading={<TabHeading><Icon name="ios-chatbubbles" /><Text>chat</Text></TabHeading>}>
-                        <Chat />
+                        <Chat chatHomeNavProps={this.props.navProps} />
                     </Tab>
                     <Tab heading={<TabHeading><Icon name="paper" /><Text>Status</Text></TabHeading>}>
                         <Status />

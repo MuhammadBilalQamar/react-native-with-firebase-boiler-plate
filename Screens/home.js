@@ -16,7 +16,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        // console.log( this.props.navigation.state.params.hi)
+        // console.log(this.props.navigation)
 
     }
     render() {
@@ -31,7 +31,7 @@ export default class Home extends Component {
                     <Body>
                         <Title>
                             {/* <Icon name='menu' /> */}
-                           Chatting app</Title>
+                            Chatting app</Title>
                     </Body>
                     <Right />
                 </Header>
@@ -40,7 +40,7 @@ export default class Home extends Component {
                 {/* MAIN CONTENT WORK */}
 
                 <Content>
-                    <ChatHome />
+                    <ChatHome navProps={this.props.navigation} />
                 </Content>
 
                 {/* FOOTER WORK */}

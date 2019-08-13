@@ -8,7 +8,9 @@ import { Icon } from "native-base";
 import Signup from "./Screens/signup";
 import Home from "./Screens/home";
 import Login from './Screens/login';
-import ChatHome from "./Screens/ChatComponent/chatHome"
+import ChatHome from "./Screens/ChatComponent/chatHome";
+import ChatToParticularUser from './Screens/ChatComponent/chatToParticularUser'
+import Chat from "./Screens/ChatComponent/chat"
 const AppNavigator = createStackNavigator(
   {
 
@@ -47,10 +49,34 @@ const AppNavigator = createStackNavigator(
         )
       }
     },
+    Chat: {
+      screen: Chat,
+      navigationOptions: {
+        tabBarLabel: "Chat",
+        // color:"#1A5CAD",
+        //tabBarActiveTintColor
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-home" size={20} style={{ color: "white" }} />
+        )
+      }
+    },
+
     ChatHome: {
       screen: ChatHome,
       navigationOptions: {
-        // tabBarLabel: "Membership",
+        tabBarLabel: "ChatHome",
+        // title: 'Sign In',
+        // // color:"#1A5CAD",
+        // //tabBarActiveTintColor
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="home" size={20} style={{ color: "black" }} />
+        )
+      }
+    },
+    ChatToParticularUser: {
+      screen: ChatToParticularUser,
+      navigationOptions: {
+        tabBarLabel: "ChatToParticularUser",
         // title: 'Sign In',
         // // color:"#1A5CAD",
         // //tabBarActiveTintColor
@@ -60,7 +86,9 @@ const AppNavigator = createStackNavigator(
       }
     },
 
+
   },
+
   {
     // tabBarOptions: {
     //   activeTintColor: "white",
@@ -70,7 +98,7 @@ const AppNavigator = createStackNavigator(
     //   },
     // },
 
-    initialRouteName: "ChatHome"
+    initialRouteName: "Login"
   }
 );
 

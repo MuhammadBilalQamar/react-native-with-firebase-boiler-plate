@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, List, ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
+// import console = require('console');
+
 // import chat from './tabOne';
 // import Tab5 from './tabFive';
 export default class Chat extends Component {
@@ -30,7 +32,18 @@ export default class Chat extends Component {
     }
 
     componentDidMount() {
-        // console.log( this.props.navigation.state.params.hi)
+        // console.log(this.props.chatHomeNavProps)
+        // this.props.navigation.navigate("ChatToParticularUser")
+    }
+    navigateToChat = (index) => {
+        // console.log(index)
+        const { userDetail } = this.state;
+        var userData = userDetail[index];
+        this.props.chatHomeNavProps.navigate("ChatToParticularUser", {
+            userData,
+            chatNavProps: this.props.chatHomeNavProps
+        })
+        // console.log(userData)
 
     }
     render() {
@@ -39,9 +52,9 @@ export default class Chat extends Component {
             // <Icon name="apps" size={20} style={{ color: "blue" }} />
             <Container style={{ marginTop: 10 }}>
                 <List>
-                    {userDetail.map((item) => {
+                    {userDetail.map((item, index) => {
                         return (
-                            <ListItem avatar style={{ margin: 5 }}>
+                            <ListItem key={index} avatar style={{ margin: 5 }} onPress={() => this.navigateToChat(index)}>
                                 <Left>
                                     <Thumbnail source={item.img} />
                                 </Left>
